@@ -1,0 +1,65 @@
+  <head><script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">function dateDiff() {
+  //define two variables and fetch the input from HTML form
+  var dateI1 = document.getElementById('dateInput1').value;
+  var dateI2 = document.getElementById('dateInput2').value;
+
+  //define two date object variables to store the date values
+  var date1 = new Date(dateI1);
+  var date2 = new Date(dateI2);
+
+  //calculate time difference
+  var time_difference = date2.getTime() - date1.getTime();
+
+  //calculate days difference by dividing total milliseconds in a day
+  var result = time_difference / (1000 * 60 * 60 * 24);
+
+  return (document.getElementById('result').innerHTML =
+    result + ' days between referral and diagnosis ');
+}
+
+function dateDiff2() {
+  //define two variables and fetch the input from HTML form
+  var dateI1 = document.getElementById('dateInput1').value;
+  var dateI3 = document.getElementById('dateInput3').value;
+
+  //define two date object variables to store the date values
+  var date1 = new Date(dateI1);
+  var date3 = new Date(dateI3);
+
+  //calculate time difference
+  var time_difference2 = date3.getTime() - date1.getTime();
+
+  //calculate days difference by dividing total milliseconds in a day
+  var result2 = time_difference2 / (1000 * 60 * 60 * 24);
+
+  return (document.getElementById('result2').innerHTML =
+    result2 + ' days between referral and treatment ');
+}
+
+</script>
+<style type="text/css">
+form {
+    padding: 20px;
+}
+</style></head>
+        <p align="Center"> <b> Referral Date   </b>   
+        <input type="date" id="dateInput1">   
+        <br> <br>   
+          
+        <p align="Center"> <b> Diagnosis Date   </b>   
+        <input type="date" id="dateInput2">   
+        <br> <br>   
+
+        <p align="Center"> <b> Treatment Date   </b>   
+        <input type="date" id="dateInput3">   
+        <br> <br>       
+    
+        <button onclick="dateDiff(); dateDiff2()">   
+          Calculate  
+        </button> 
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    </p>   
+        <h3 style="color:32A80F" id="result" align="center"></h3>
+    </p>   
+        <h3 style="color:32A80F" id="result2" align="center"></h3>
